@@ -1,0 +1,39 @@
+CREATE TABLE "Users" (
+	"id_AI"	INTEGER NOT NULL UNIQUE,
+	"full_name"	TEXT NOT NULL,
+	"password"	TEXT NOT NULL,
+	"real_id"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("id_AI" AUTOINCREMENT)
+)
+
+
+CREATE TABLE "Tickets" (
+	"ticket_id"	INTEGER NOT NULL,
+	"user_id"	INTEGER NOT NULL,
+	"flight_id" INTEGER NOT NULL,
+	PRIMARY KEY("ticket_id" AUTOINCREMENT),
+	FOREIGN KEY  ("flight_id") REFERENCES Flights("flight_id")
+	FOREIGN KEY  ("user_id") REFERENCES  Users("id_AI")
+)
+
+
+CREATE TABLE "Flights" (
+	"flight_id"	INTEGER NOT NULL,
+	"timestamp"	datetime,
+	"remaining_seats" INTEGER NOT NULL,
+	"origin_country_id"	INTEGER NOT NULL,
+	"dest_country_id"	INTEGER NOT NULL,
+	PRIMARY KEY("flight_id" AUTOINCREMENT),
+	FOREIGN KEY ("origin_country_id") REFERENCES Countries("code_AI"),
+	FOREIGN KEY ("dest_country_id") REFERENCES Countries("code_AI")
+)
+
+
+
+CREATE TABLE "Countries" (
+	"code_AI"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("code_AI" AUTOINCREMENT)
+)
+
+
