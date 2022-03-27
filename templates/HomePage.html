@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Airline Company</title>
+</head>
+<body>
+    <hr>
+    <form name="signUp" action="http://127.0.0.1:5000/users" method="post">
+        <h1>Welcome to the Airline company </h1>
+        <h2>Doesn't have an account yet?</h2>
+        <p>ID Number: <input type="text" name="new_id"  minlength="9" maxlength="9" 
+                             title="ID Number should contain 9-digits only." required /></p>
+        <p>Full Name: <input type="text" name="new_name" required/></p>
+        <p>Password: <input type="password" name="new_pwd" minlength="6" maxlength="16" required/></p>
+        <button type="submit">Sign-Up</button>
+        <br></br>
+        <br></br>
+    </form>
+    <form name="signIn" action="http://127.0.0.1:5000/login" method="post">
+            <h2>Have an account already?</h2>
+        <p>ID Number: <input type="text" name="id" required /></p>
+        <p>Password: <input type="password" name="pwd" required /></p>
+        <button type="submit" >Sign-In</button>
+    </form>
+
+</body>
+</html>

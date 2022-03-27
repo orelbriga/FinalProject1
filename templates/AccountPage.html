@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Airline Company</title>
+</head>
+<body>
+    <hr>
+        <h1>Hello {{name}}!</h1>
+        <h2>ID Number: {{ID}}</h2>
+    </form>
+        <meta content="">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function() {
+	$("#visible").click(function() {
+	    $('#invisible').toggleClass("show");
+	  });
+	});
+    </script>
+    <style>
+      .hide{display:none;}
+      .show{display:block;}
+    </style>
+  <body>
+    <br>
+    <p id="visible"><u><font color="#0000FF">Click Here to view all your tickets:</font> </u> </p>
+    <p id="invisible" class="hide">
+        {% for ticket in lstTickets: %}
+        {{ ticket }}
+        <br>
+        {% endfor %}
+    </p>
+        <br>
+  </body>
+
+        <meta content="">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function() {
+	$("#visible2").click(function() {
+	    $('#invisible2').toggleClass("show");
+	  });
+	});
+    </script>
+    <style>
+      .hide{display:none;}
+      .show{display:block;}
+    </style>
+  <body>
+    <p id="visible2"><u><font color="#0000FF">Click Here to view all flights:</font> </u> </p>
+    <p id="invisible2" class="hide">
+        {% for flight in lstFlights: %}
+        {{ flight }}
+        <br>
+        {% endfor %}
+    </p>
+        <br>
+  </body>
+
+    <form name="Account" action="http://127.0.0.1:5000/myAccount" method="post">
+        <h3>Buy Ticket:</h3>
+        <p>Enter Flight ID: <input type="number" name="flight_id" required/></p>
+        <button type="submit">Buy</button>
+    </form>
+
+    <form name="Account" action="http://127.0.0.1:5000/myAccount/deleteTicket" method="post">
+        <br>
+        <h3>Delete Ticket:</h3>
+        <p>Enter Ticket ID: <input type="number" name="ticket_id" required/></p>
+        <button type="submit">Delete</button>
+    </form>
+
+
+
+</body>
+</html>
